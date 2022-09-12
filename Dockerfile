@@ -5,7 +5,6 @@ ENV HOME="/root" LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8" DEBI
 ENV CUPS_USER_ADMIN admin
 ENV CUPS_USER_PASSWORD password
 
-
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
