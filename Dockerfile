@@ -47,7 +47,7 @@ RUN rm -rf /etc/service/sshd /etc/service/cron /etc/service/syslog-ng /etc/my_in
 RUN echo 'root:root' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN mkdir /root/.ssh
+#RUN mkdir /root/.ssh
 
 CMD ["/usr/sbin/sshd", "-D"]
 
