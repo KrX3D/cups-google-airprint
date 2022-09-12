@@ -35,7 +35,6 @@ RUN apt-get update -qy \
 && apt-get -qq -y autoremove \
 && apt-get -qq -y clean
 
-
 COPY init.sh airprint-generate.py /tmp/
 RUN rm -rf /etc/service/sshd /etc/service/cron /etc/service/syslog-ng /etc/my_init.d/00_regen_ssh_host_keys.sh /var/lib/apt/lists/* /var/tmp/* || true \
 && mv -f /usr/lib/cups/backend/parallel /usr/lib/cups/backend-available/ || true \
