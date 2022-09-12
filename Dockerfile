@@ -43,7 +43,7 @@ RUN rm -rf /etc/service/sshd /etc/service/cron /etc/service/syslog-ng /etc/my_in
 && chmod +x /tmp/airprint-generate.py \
 && /tmp/init.sh
 
-RUN mkdir /var/run/sshd
+#RUN mkdir /var/run/sshd
 RUN echo 'root:root' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
