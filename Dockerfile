@@ -31,6 +31,7 @@ RUN apt-get update -qy \
         python3-cups \
         python \
         whois \
+        nano \
 && apt-get -qq -y autoclean \
 && apt-get -qq -y autoremove \
 && apt-get -qq -y clean
