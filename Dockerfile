@@ -56,7 +56,7 @@ RUN chmod +x /docker-entrypoint.sh
 #CMD ["/usr/sbin/sshd", "-D"]
 
 # Export volumes
-VOLUME /config /etc/cups/ /var/log/cups /var/spool/cups /var/cache/cups
+VOLUME /config /etc/cups/ /var/log/cups /var/spool/cups /var/cache/cups /root/.ssh
 EXPOSE 631 5353 22
 
 ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
