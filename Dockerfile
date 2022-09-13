@@ -49,8 +49,13 @@ RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_confi
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 #RUN mkdir /root/.ssh
 
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
 #CMD ["/usr/sbin/sshd", "-D"]
 
 # Export volumes
 VOLUME /config /etc/cups/ /var/log/cups /var/spool/cups /var/cache/cups
 EXPOSE 631 5353 22
+
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
